@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<SaveObject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <scores>
+    <HiScore>
+      <Name>Anna</Name>
+      <Score>30</Score>
+      <IPaddr>::1</IPaddr>
+      <Time>2017-01-15T23:48:55.0502909+00:00</Time>
+    </HiScore>
+    <HiScore>
+      <Name>Benny</Name>
+      <Score>40</Score>
+      <IPaddr>::1</IPaddr>
+      <Time>2017-01-16T00:45:25.6605996+00:00</Time>
+    </HiScore>
+  </scores>
+</SaveObject>

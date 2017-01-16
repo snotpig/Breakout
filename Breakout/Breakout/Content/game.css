@@ -1,0 +1,111 @@
+﻿@font-face {
+    font-family: snap;
+    src: url(Fonts/Snap_ITC.woff);
+}
+body {
+    user-select: none;
+}
+html {
+    height: 100%;
+    background: linear-gradient(#eeeecc, #3333ff);
+    color: #eeee44;
+}
+body{
+    margin-top: 0;
+}
+#canvas {
+    background-color: black;
+    width: 600px;
+    margin: auto;
+    display: none;
+}
+#game {
+    background-color: black;
+    width: 600px;
+    height: 400px;
+    margin: auto;
+}
+h1,h2,li {
+    text-align: center;
+}
+ul {
+    list-style: none;
+    position: relative;
+    left: -15px;
+}
+#hs_panel {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    background-color: transparent;
+}
+table {
+    width: 100%;
+}
+tr {
+    font-size: 32px;
+}
+td[id^="hs_n"] {
+    position: relative;
+    left: 30px;
+}
+td[id^="hs_s"] {
+    position: relative;
+    right: 30px;
+    text-align: right;
+}
+#hs_dlg {
+    width: 90%;
+    margin: 10px auto;
+    display:none;
+}
+.hs_title {
+    text-shadow: 5px 5px 5px #333;
+}
+input {
+    color: #3333aa;
+    background-color: #fffff0;
+    font-size: 32px;
+    border: 1px solid white;
+    border-radius: 2px;
+    margin-left: 40px;
+}
+#btn_submit {
+    height: 42px;
+    background-color: #4444ff;
+    float:right;
+    margin-right: 40px;
+}
+button {
+    border-radius: 5px;
+    font-size: 100%;
+    background-color: #4455ff;
+    color: #eeee44;
+}
+#btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+}
+h1 {
+    color: #4455ff;
+    font-family: snap;
+    font-size: 56px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+h2 {
+    color: #22dd11;
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+h3 {
+    font-size: 32px;
+    margin: 15px auto;
+    text-align: center;
+}
+li {
+    margin: 7px;
+}
