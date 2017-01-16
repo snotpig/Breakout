@@ -5,14 +5,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Breakout</title>
     <link rel="stylesheet" href="~/Content/game.css" />
 </head>
 <body>
-    <canvas id="canvas" width="600" height="400">
+    <canvas id="canvas" width="600" height="400" class="defw">
     </canvas>
-    <div id="game">
+    <div id="game" class="defw">
         <h1>Breakout</h1>
         <hr>
         <h2>Controls</h2>
@@ -27,21 +27,21 @@
         <button id="btn">Start Game</button>
     </div>
 
-    <div id="hs_panel">
-        <div id="hs_dlg">
-            <h1 class="hs_title">Congratulations!</h1>
+    <div id="hs-panel" class="defw">
+        <div id="hs-dlg">
+            <h1 class="hs-title">Congratulations!</h1>
             <h3>You achieved a high score.</h3>
-            <input type="text" id="txt_name" placeholder="Enter your name"/>
-            <button id="btn_submit">Submit</button>
+            <input type="text" id="txt-name" placeholder="Enter your name"/>
+            <button id="btn-submit">Submit</button>
         </div>
-        <div id="hs_list">
-            <h1 class="hs_title">High Scores</h1>
-            <table id="hs_tbl">
+        <div id="hs-list">
+            <h1 class="hs-title">High Scores</h1>
+            <table id="hs-tbl">
                 @for (int i = 0; i < 6; i++)
             {
-                var nid = "hs_n" + i;
-                var sid = "hs_s" + i;
-                    <tr class="hs_row">
+                var nid = "hs-n" + i;
+                var sid = "hs-s" + i;
+                    <tr class="hs-row">
                         <td id="@nid"></td>
                         <td id="@sid"></td>
                     </tr>
@@ -50,12 +50,8 @@
         </div>
     </div>
 
-    <script src="~/scripts/ld.js"></script>
-    <script src="~/scripts/bo.js"></script>
-
-    @*<script src="~/scripts/ld.min.js"></script>
-    <script src="~/scripts/bo.min.js"></script>*@
-
+    <script src="~/scripts/ld.min.js"></script>
+    <script src="~/scripts/bo.min.js"></script>
     <script src="~/Scripts/ga.js"></script>
 </body>
 </html>

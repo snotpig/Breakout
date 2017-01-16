@@ -31,3 +31,7 @@ F:\Documents\GitHub\Breakout\Breakout\BOTests\bin\Debug\System.Web.WebPages.Depl
 F:\Documents\GitHub\Breakout\Breakout\BOTests\bin\Debug\System.Web.WebPages.Razor.xml
 F:\Documents\GitHub\Breakout\Breakout\BOTests\obj\Debug\BOTests.dll
 F:\Documents\GitHub\Breakout\Breakout\BOTests\obj\Debug\BOTests.pdb
+F:\Documents\GitHub\Breakout\Breakout\BOTests\bin\Debug\Sound\b.wav
+F:\Documents\GitHub\Breakout\Breakout\BOTests\bin\Debug\Sound\p.wav
+F:\Documents\GitHub\Breakout\Breakout\BOTests\bin\Debug\Sound\t.wav
+F:\Documents\GitHub\Breakout\Breakout\BOTests\bin\Debug\Sound\w.wav

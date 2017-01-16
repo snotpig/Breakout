@@ -25,5 +25,17 @@
       <IPaddr>::1</IPaddr>
       <Time>2017-01-16T11:31:10.7092064+00:00</Time>
     </HiScore>
+    <HiScore>
+      <Name>Tim</Name>
+      <Score>30</Score>
+      <IPaddr>::1</IPaddr>
+      <Time>2017-01-16T17:17:54.9988072+00:00</Time>
+    </HiScore>
+    <HiScore>
+      <Name>Anna</Name>
+      <Score>50</Score>
+      <IPaddr>::1</IPaddr>
+      <Time>2017-01-16T18:28:41.3698072+00:00</Time>
+    </HiScore>
   </scores>
 </SaveObject>

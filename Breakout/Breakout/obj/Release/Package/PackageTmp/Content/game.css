@@ -2,9 +2,7 @@
     font-family: snap;
     src: url(Fonts/Snap_ITC.woff);
 }
-html {
-    min-height: 100%;
-}
+html { min-height: 100%; }
 body {
     user-select: none;
     min-height: 100%;
@@ -12,70 +10,59 @@ body {
     color: #eeee44;
     margin: 0;
 }
-
+.defw { width: 600px; }
 #canvas {
     background-color: black;
-    width: 600px;
     margin: auto;
     display: none;
 }
 #game {
     background-color: black;
-    width: 600px;
     height: 400px;
     margin: auto;
 }
-h1,h2,li {
-    text-align: center;
-}
+h1,h2,li { text-align: center;}
 ul {
     list-style: none;
     position: relative;
     left: -15px;
 }
-#hs_panel {
-    width: 600px;
+#hs-panel {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
     background-color: transparent;
 }
-table {
-    width: 100%;
-}
-tr {
-    font-size: 32px;
-}
-td[id^="hs_n"] {
+table { width: 100%; }
+tr { font-size: 32px;}
+td[id^="hs-n"] {
     position: relative;
     left: 30px;
 }
-td[id^="hs_s"] {
+td[id^="hs-s"] {
     position: relative;
     right: 30px;
     text-align: right;
 }
-#hs_dlg {
-    width: 90%;
+#hs-dlg {
+    width: 80%;
     margin: 10px auto;
     display:none;
 }
-.hs_title {
-    text-shadow: 5px 5px 5px #333;
-}
+.hs-title { text-shadow: 5px 5px 5px #333; }
 input {
     color: #3333aa;
     background-color: #fffff0;
-    font-size: 32px;
+    font-size: 200%;
     border: 1px solid white;
     border-radius: 2px;
-    margin-left: 40px;
+    max-width: 100%;
 }
-#btn_submit {
+#btn-submit {
     height: 42px;
     background-color: #4444ff;
     float:right;
-    margin-right: 40px;
+    margin-right: 0px;
 }
 button {
     border-radius: 5px;
@@ -106,6 +93,17 @@ h3 {
     margin: 15px auto;
     text-align: center;
 }
-li {
-    margin: 7px;
+li { margin: 7px; }
+@media only screen and (max-width: 600px) {
+    canvas, #game, #hs-panel {
+        max-width: 100%;
+    }
+    #hs-dlg, input { width: 100%; }
+    #btn-submit {
+         float: none;
+         display: block;
+         width: 100%; 
+         margin-top: 7px;
+    }
+    .hs-title { font-size: 38px; }
 }

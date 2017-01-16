@@ -1,6 +1,6 @@
 "use strict";
 var banner = document.getElementById('game');
-var hsTable = document.getElementById(hs_tbl);
+var hsTable = document.getElementById('hs-tbl');
 var touch = false, fullWidth = false, hiScores = [], hiScore=false;
 var btn = document.getElementById('btn');
 var canvas = document.getElementById('canvas');
@@ -11,7 +11,7 @@ var T, sounds, soundOn = false, paused = false, sbDown;
 var levels, ball = {}, pad, rows, brickCount, bricks = [], gap;
 var timer, bTimer, lives, gmOvr, showPB, newLvl, lastRender, sound;
 var score, level, velSq, time, startTime, bonus;
-if (storageAvailable('localStorage')) {
+if(storageAvailable('localStorage')) {
     soundOn = localStorage.getItem('BO1701soundOn') === 'true';
 }
 btn.addEventListener('click', start);
@@ -19,7 +19,8 @@ banner.addEventListener('dblclick', dblClick);
 document.addEventListener("keyup", keyUp);
 loadHiScores();
 
-function start() {
+function start(e) {
+    e.stopPropagation();
     canvas.style.display = 'block';
     banner.style.display = 'none';
     canvas.addEventListener('dblclick', dblClick);
@@ -561,8 +562,8 @@ function loadHiScores() {
 
 function displayScores() {
     for (var i=0; i<hiScores.length; i++) {
-        document.getElementById('hs_n'+i).innerHTML = hiScores[i].name;
-        document.getElementById('hs_s' + i).innerHTML = hiScores[i].score;
+        document.getElementById('hs-n'+i).innerHTML = hiScores[i].name;
+        document.getElementById('hs-s' + i).innerHTML = hiScores[i].score;
     }
 }
 
@@ -573,22 +574,22 @@ function checkHi() {
             hiScore = true;
             fullWidth = false;
             resize();
-            document.getElementById('hs_list').style.display = 'none';
-            document.getElementById('hs_dlg').style.display = 'block';
-            document.getElementById('btn_submit').addEventListener('click', submitScore);
+            document.getElementById('hs-list').style.display = 'none';
+            document.getElementById('hs-dlg').style.display = 'block';
+            document.getElementById('btn-submit').addEventListener('click', submitScore);
         }, 700);
     }
 }
 
 function submitScore(e) {
-    var name = document.getElementById('txt_name').value.replace(/[\"<>]+/g, '_');
+    var name = document.getElementById('txt-name').value.replace(/[\"<>]+/g, '_');
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function (e) {
         if(this.readyState === 4) {
             if(this.status === 200) {
                 hiScores = JSON.parse(xhttp.responseText);
-                document.getElementById('hs_dlg').style.display = 'none';
-                document.getElementById('hs_list').style.display = 'block';
+                document.getElementById('hs-dlg').style.display = 'none';
+                document.getElementById('hs-list').style.display = 'block';
                 displayScores();
                 hiScore = false;
                 showPB = true;
