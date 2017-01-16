@@ -14,6 +14,7 @@ namespace BOTests
         [TestMethod]
         public void CanSaveHiScore()
         {
+            var hiscores = new HiScores();
             string FILENAME = Path.GetFullPath("..\\..\\HiScores\\HiScores.xml");
             if (File.Exists(FILENAME))
             {
@@ -28,7 +29,7 @@ namespace BOTests
                 IPaddr = "123",
                 Time = new DateTime(123456)
             };
-            HiScores.addScore(hs);
+            hiscores.addScore(hs);
 
             XmlSerializer writer = new XmlSerializer(typeof(HiScores.SaveObject));
             using (var fs = new FileStream(FILENAME, FileMode.Open))

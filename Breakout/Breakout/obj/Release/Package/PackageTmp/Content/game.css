@@ -2,17 +2,17 @@
     font-family: snap;
     src: url(Fonts/Snap_ITC.woff);
 }
+html {
+    min-height: 100%;
+}
 body {
     user-select: none;
-}
-html {
-    height: 100%;
+    min-height: 100%;
     background: linear-gradient(#eeeecc, #3333ff);
     color: #eeee44;
+    margin: 0;
 }
-body{
-    margin-top: 0;
-}
+
 #canvas {
     background-color: black;
     width: 600px;

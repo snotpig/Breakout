@@ -93,10 +93,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\ga.js" />
-    <Content Include="Scripts\game.js" />
-    <Content Include="Scripts\game.min.js" />
-    <Content Include="Scripts\pgLd.js" />
-    <Content Include="Scripts\pgLd.min.js" />
+    <Content Include="Scripts\bo.min.js" />
+    <Content Include="Scripts\ld.min.js" />
     <Content Include="Sound\b.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
