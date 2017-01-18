@@ -1,16 +1,16 @@
 "use strict";
+const width = 600, height = 400, COLUMNS = 15, psX = 385, spkX = 443;
 var banner = document.getElementById('game');
 var hsTable = document.getElementById('hs-tbl');
 var touch = false, fullWidth = false, hiScores = [], hiScore=false;
 var btn = document.getElementById('btn');
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-const width=600, height=400, COLUMNS = 15, psX = 385, spkX = 443;
 var rKey = false, lKey = false, boost = false;
 var T, sounds, soundOn = false, paused = false, sbDown;
 var levels, ball = {}, pad, rows, brickCount, bricks = [], gap;
 var timer, bTimer, lives, gmOvr, showPB, newLvl, lastRender, sound;
-var score, level, velSq, time, startTime, bonus;
+var score, level, velSq, time, bonus;
 if(storageAvailable('localStorage')) {
     soundOn = localStorage.getItem('BO1701soundOn') === 'true';
 }
@@ -67,8 +67,8 @@ function serve() {
 }
 
 function levelUp() {
-    var tb = Math.round((20000 * (level+8) - time)/100);
-    console.log('level: ' + level + ', tb: ' + tb);//<<<<<<<<<<<<<<<<<
+    var tb = Math.round((2000 * (level+4) - time)/10);
+//    console.log('level: ' + level + ', tb: ' + tb);//<<<<<<<<<<<<<<<<<
     if(tb < 0) tb = 0;
     bonus = 100*level + tb;
     bTimer = 100;
@@ -81,7 +81,7 @@ function startLevel() {
     gap = levels[level].gap;
     velSq = levels[level].velSq;
     serve();    
-    startTime = Date.now();
+    time = 0;
     newLvl = true;
     timer = 90;
 }
@@ -112,7 +112,7 @@ function update() { //return;
         }
     }
     if(gmOvr) return;
-    time = Date.now() - startTime;
+    time++;
     var bst = boost? 6: 0;
     pad.x += (rKey? pad.dx+bst : 0) - (lKey? pad.dx+bst : 0);
     if(pad.x<0) pad.x = 0;
@@ -122,7 +122,7 @@ function update() { //return;
     ball.y += ball.dy;
     
     if(ball.y > height + 10) {
-        //ball.dy = -ball.dy;//<<<<<<<<<<<<
+//        ball.dy = -ball.dy;//<<<<<<<<<<<<
         loseLife();
         return;
     }
@@ -182,7 +182,7 @@ function update() { //return;
 /////////////////////////////////////////////////////////////////////////////
 ///////////////////////////// DRAW //////////////////////////////////////////
 function draw(t) {
-    T = gmOvr? 500 : 15;
+    T = (gmOvr || paused)? 500 : 15;
     var delta = (t - lastRender);
     if(delta >= T) {
         var ticks = Math.floor(delta/T);
@@ -581,13 +581,15 @@ function checkHi() {
     }
 }
 
-function submitScore(e) {
-    var name = document.getElementById('txt-name').value.replace(/[\"<>]+/g, '_');
+function submitScore() {
+    var txtbx = document.getElementById('txt-name');
+    var name = txtbx.value.replace(/[\"<>]+/g, '_');
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function (e) {
         if(this.readyState === 4) {
             if(this.status === 200) {
                 hiScores = JSON.parse(xhttp.responseText);
+                txtbx.value = '';
                 document.getElementById('hs-dlg').style.display = 'none';
                 document.getElementById('hs-list').style.display = 'block';
                 displayScores();
