@@ -6,7 +6,7 @@ var touch = false, fullWidth = false, hiScores = [], hiScore=false;
 var btn = document.getElementById('btn');
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-var rKey = false, lKey = false, boost = false;
+var rKey = false, lKey = false, boost = false;//, omX, omY;
 var T, sounds, soundOn = false, paused = false, sbDown;
 var levels, ball = {}, pad, rows, brickCount, bricks = [], gap;
 var timer, bTimer, lives, gmOvr, showPB, newLvl, lastRender, sound;
@@ -432,8 +432,11 @@ function keyDown(e) {
 }
 
 function keyUp(e) {
-    if (hiScore) return;
-    if(e.keyCode === 39) rKey = false;
+    if (hiScore) {
+        if (e.keyCode === 13) submitScore(e);
+        return;
+    }
+    else if(e.keyCode === 39) rKey = false;
     else if(e.keyCode === 37) lKey = false;
     else if(e.keyCode === 32)  boost = false;
     else if(e.keyCode === 80)  paused = !paused;
@@ -446,11 +449,15 @@ function keyUp(e) {
         resize();
     }
     else if(e.keyCode === 83)  soundOn = !soundOn;
-    else if(showPB && e.keyCode === 13) initGame();
-    else if (hiScore && e.keyCode === 13) submitScore(e);
+    else if (e.keyCode === 13) {
+        if (showPB) initGame();
+        else start(e);
+    }
 }
 
 function mouseMove(e) {
+//    if (Math.abs(e.clientX - omX) < 1 && Math.abs(e.clientY - omY) < 1) return;
+//    return;////////<<<<<<<<<<<<<<<<<<<<<<<<
     var relX = (e.clientX - canvas.offsetLeft) * width / canvas.offsetWidth;
     var relY = (e.clientY - canvas.offsetTop) * height / canvas.offsetHeight;
     if(!gmOvr && !paused && !timer) {
@@ -468,6 +475,7 @@ function mouseMove(e) {
         canvas.style.cursor = 'pointer';
     }
     else canvas.style.cursor=(gmOvr||paused||(relY<=22))? 'default' : 'none';
+//    omX = e.clientX;  omY = e.clientY;
 }
 
 function touchMove(e) {
