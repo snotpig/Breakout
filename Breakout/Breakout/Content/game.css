@@ -45,7 +45,7 @@ td[id^="hs-s"] {
     text-align: right;
 }
 #hs-dlg {
-    width: 80%;
+    width: 90%;
     margin: 10px auto;
     display:none;
 }
@@ -57,12 +57,14 @@ input {
     border: 1px solid white;
     border-radius: 2px;
     max-width: 100%;
+    margin-bottom: 50px;
+    margin-left: 6%
 }
 #btn-submit {
     height: 42px;
     background-color: #4444ff;
     float:right;
-    margin-right: 0px;
+    margin-right: 6%;
 }
 button {
     border-radius: 5px;
@@ -98,7 +100,10 @@ li { margin: 7px; }
     canvas, #game, #hs-panel {
         max-width: 100%;
     }
-    #hs-dlg, input { width: 100%; }
+    #hs-dlg, input { 
+        width: 100%;
+        margin-left: 0;
+    }
     #btn-submit {
          float: none;
          display: block;

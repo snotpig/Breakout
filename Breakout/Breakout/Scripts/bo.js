@@ -582,7 +582,7 @@ function checkHi() {
             hiScore = true;
             fullWidth = false;
             resize();
-            document.getElementById('hs-list').style.display = 'none';
+//            document.getElementById('hs-list').style.display = 'none';
             document.getElementById('hs-dlg').style.display = 'block';
             document.getElementById('btn-submit').addEventListener('click', submitScore);
         }, 700);
