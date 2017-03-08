@@ -35,3 +35,6 @@ F:\Documents\GitHub\Breakout\Breakout\BOTests\bin\Debug\Sound\b.wav
 F:\Documents\GitHub\Breakout\Breakout\BOTests\bin\Debug\Sound\p.wav
 F:\Documents\GitHub\Breakout\Breakout\BOTests\bin\Debug\Sound\t.wav
 F:\Documents\GitHub\Breakout\Breakout\BOTests\bin\Debug\Sound\w.wav
+F:\Documents\GitHub\Breakout\Breakout\BOTests\bin\Debug\BOTests.dll.config
+F:\Documents\GitHub\Breakout\Breakout\BOTests\bin\Debug\System.Web.Optimization.dll
+F:\Documents\GitHub\Breakout\Breakout\BOTests\bin\Debug\System.Web.Optimization.xml

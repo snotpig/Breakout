@@ -7,7 +7,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>Breakout</title>
-    <link rel="stylesheet" href="~/Content/game.css" />
+    @Styles.Render("~/content/game.css")
 </head>
 <body>
     <canvas id="canvas" width="600" height="400" class="defw">
@@ -49,12 +49,6 @@
             </table>
         </div>
     </div>
-
-    @*<script src="~/scripts/ld.min.js"></script>
-    <script src="~/scripts/bo.min.js"></script>*@
-    <script src="~/scripts/ld.js"></script>
-    <script src="~/scripts/bo.js"></script>
-
-    <script src="~/Scripts/ga.js"></script>
+    @Scripts.Render("~/bundles/js")
 </body>
 </html>
